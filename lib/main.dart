@@ -1,18 +1,17 @@
 import 'package:flutter/material.dart';
+import 'FoodMenu.dart';
 
 void main() {
   runApp(MyApp());
 }
 
 class MyApp extends StatelessWidget {
-  // This widget is the root of your application.
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
       title: 'Flutter Demo',
-      color: Colors.red,
       theme: ThemeData(
-        primarySwatch: Colors.blue,
+        primarySwatch: Colors.red,
         visualDensity: VisualDensity.adaptivePlatformDensity,
       ),
       home: MyHomePage(title: 'Flutter Demo Home Page'),
@@ -30,32 +29,35 @@ class MyHomePage extends StatefulWidget {
 }
 
 class _MyHomePageState extends State<MyHomePage> {
-  int _counter = 0;
-
-  void _incrementCounter() {
-    setState(() {
-      _counter++;
-    });
-  }
-
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        // Here we take the value from the MyHomePage object that was created by
-        // the App.build method, and use it to set our appbar title.
-        title: Text('เลือกเมนู'),
-      ),
-      body: ListView.builder(
-          itemCount: 10 + _counter,
-          itemBuilder: (BuildContext contex, int index) {
-            return ListTile(title: Text('เมนูที่ $index'));
-          }),
-      floatingActionButton: FloatingActionButton(
-        onPressed: _incrementCounter,
-        tooltip: 'Increment',
-        child: Icon(Icons.add),
-      ), // This trailing comma makes auto-formatting nicer for build methods.
-    );
+        appBar: AppBar(
+          title: Text('บัญชีของฉัน'),
+        ),
+        body: Column(
+          children: [
+            Container(
+              // กำหรดกล่อง
+              decoration: BoxDecoration(
+                  color: Colors.redAccent,
+                  borderRadius: BorderRadius.circular(100)),
+              height: 100,
+            ),
+            Container(
+              // กำหรดกล่อง
+              decoration: BoxDecoration(
+                  color: Colors.blue, borderRadius: BorderRadius.circular(100)),
+              height: 100,
+            ),
+            Container(
+              // กำหรดกล่อง
+              decoration: BoxDecoration(
+                  color: Colors.orange,
+                  borderRadius: BorderRadius.circular(100)),
+              height: 100,
+            )
+          ],
+        ));
   }
 }
